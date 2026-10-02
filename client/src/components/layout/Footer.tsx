@@ -1,227 +1,189 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import {
-  Truck,
-  ShieldCheck,
-  RotateCcw,
-  Headphones,
-  Mail,
-  ArrowRight,
-  Heart,
-} from "lucide-react";
+import { ShieldCheck, RotateCcw } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-slate-950 text-slate-400">
-      {/* Trust & Guarantee Banner */}
-      <div className="border-b border-slate-800 bg-slate-900/60 py-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-indigo-500/10 text-indigo-400">
-                <Truck className="h-6 w-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-white">Free Express Shipping</h4>
-                <p className="text-xs text-slate-400 mt-0.5">On all orders above ₹999 across India</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-400">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-white">100% Genuine Products</h4>
-                <p className="text-xs text-slate-400 mt-0.5">Directly sourced & verified authentic</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-amber-500/10 text-amber-400">
-                <RotateCcw className="h-6 w-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-white">7-Day Easy Returns</h4>
-                <p className="text-xs text-slate-400 mt-0.5">Hassle-free doorstep exchanges</p>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-rose-500/10 text-rose-400">
-                <Headphones className="h-6 w-6" />
-              </div>
-              <div>
-                <h4 className="text-sm font-bold text-white">Dedicated Support</h4>
-                <p className="text-xs text-slate-400 mt-0.5">Expert assistance whenever needed</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Multi-Column Links */}
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
-          {/* Brand Info & Newsletter */}
-          <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-2 group">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600 text-white font-black text-lg">
-                ⚡
-              </div>
-              <span className="text-2xl font-black tracking-tight text-white">
-                Shop<span className="text-indigo-400">Pulse</span>
-              </span>
-            </Link>
-
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
-              India's premier event-aware e-commerce platform. Discover curated apparel, electronics, sports gear, and lifestyle products synced with live events.
-            </p>
-
-            {/* Newsletter Input */}
-            <div className="mt-6 max-w-md">
-              <label htmlFor="newsletter" className="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">
-                Join our VIP Club for Exclusive Deals
-              </label>
-              <form onSubmit={(e) => { e.preventDefault(); alert("Thank you for subscribing to ShopPulse!"); }} className="flex gap-2">
-                <div className="relative flex-1">
-                  <input
-                    id="newsletter"
-                    type="email"
-                    required
-                    placeholder="Enter your email address..."
-                    className="w-full rounded-xl border border-slate-800 bg-slate-900 py-3 pr-4 pl-10 text-xs text-white placeholder:text-slate-500 outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
-                  />
-                  <Mail className="absolute top-3.5 left-3.5 h-4 w-4 text-slate-500" />
-                </div>
-                <button
-                  type="submit"
-                  className="flex items-center justify-center rounded-xl bg-indigo-600 px-5 text-xs font-semibold text-white transition-colors hover:bg-indigo-500 active:scale-95"
-                >
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* Quick Shop Links */}
+    <footer className="w-full bg-[#fafbfc] border-t border-[#eaeaec] text-[#282c3f]">
+      <div className="mx-auto max-w-[1400px] px-4 sm:px-8 lg:px-12 py-12">
+        {/* Main 4-Column Links Section */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 pb-10 border-b border-[#eaeaec]">
+          {/* Column 1: Online Shopping */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-              Shop Categories
-            </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#282c3f] mb-4">
+              ONLINE SHOPPING
+            </h4>
+            <ul className="space-y-2 text-xs text-[#696b79]">
               <li>
-                <Link to="/shop?category=cricket" className="hover:text-white transition-colors">
-                  Cricket & Sports Gear
+                <Link to="/shop?category=mens-fashion" className="hover:text-[#282c3f]">
+                  Men
                 </Link>
               </li>
               <li>
-                <Link to="/shop?category=electronics" className="hover:text-white transition-colors">
-                  Electronics & Audio
+                <Link to="/shop?category=womens-fashion" className="hover:text-[#282c3f]">
+                  Women
                 </Link>
               </li>
               <li>
-                <Link to="/shop?category=mens-fashion" className="hover:text-white transition-colors">
-                  Men's Fashion
+                <Link to="/shop?category=cricket" className="hover:text-[#282c3f]">
+                  Cricket &amp; Sports
                 </Link>
               </li>
               <li>
-                <Link to="/shop?category=womens-fashion" className="hover:text-white transition-colors">
-                  Women's Fashion
+                <Link to="/shop?category=footwear" className="hover:text-[#282c3f]">
+                  Footwear &amp; Sneakers
                 </Link>
               </li>
               <li>
-                <Link to="/shop?category=footwear" className="hover:text-white transition-colors">
-                  Footwear & Sneakers
+                <Link to="/shop?category=accessories" className="hover:text-[#282c3f]">
+                  Watches &amp; Accessories
                 </Link>
               </li>
               <li>
-                <Link to="/shop?category=accessories" className="hover:text-white transition-colors">
-                  Watches & Accessories
+                <Link to="/shop?category=electronics" className="hover:text-[#282c3f]">
+                  Gadgets &amp; Audio
+                </Link>
+              </li>
+              <li>
+                <Link to="/shop" className="hover:text-[#282c3f]">
+                  ShopPulse Insider
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Customer Care */}
+          {/* Column 2: Customer Policies */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-              Customer Service
-            </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#282c3f] mb-4">
+              CUSTOMER POLICIES
+            </h4>
+            <ul className="space-y-2 text-xs text-[#696b79]">
               <li>
-                <Link to="/shop" className="hover:text-white transition-colors">
-                  Track My Order
+                <Link to="/shop" className="hover:text-[#282c3f]">
+                  Contact Us
                 </Link>
               </li>
               <li>
-                <Link to="/shop" className="hover:text-white transition-colors">
-                  Returns & Exchanges
+                <Link to="/shop" className="hover:text-[#282c3f]">
+                  FAQ
                 </Link>
               </li>
               <li>
-                <Link to="/shop" className="hover:text-white transition-colors">
-                  Shipping & Delivery
+                <Link to="/shop" className="hover:text-[#282c3f]">
+                  T&amp;C
                 </Link>
               </li>
               <li>
-                <Link to="/shop" className="hover:text-white transition-colors">
-                  Terms & Conditions
+                <Link to="/shop" className="hover:text-[#282c3f]">
+                  Terms Of Use
                 </Link>
               </li>
               <li>
-                <Link to="/shop" className="hover:text-white transition-colors">
+                <Link to="/shop" className="hover:text-[#282c3f]">
+                  Track Orders
+                </Link>
+              </li>
+              <li>
+                <Link to="/shop" className="hover:text-[#282c3f]">
+                  Shipping
+                </Link>
+              </li>
+              <li>
+                <Link to="/shop" className="hover:text-[#282c3f]">
+                  Cancellation
+                </Link>
+              </li>
+              <li>
+                <Link to="/shop" className="hover:text-[#282c3f]">
+                  Returns
+                </Link>
+              </li>
+              <li>
+                <Link to="/shop" className="hover:text-[#282c3f]">
                   Privacy Policy
                 </Link>
               </li>
-              <li>
-                <Link to="/shop" className="hover:text-white transition-colors">
-                  Help Center & FAQs
-                </Link>
-              </li>
             </ul>
           </div>
 
-          {/* Company / Contact */}
+          {/* Column 3: Experience App On Mobile */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-wider text-white">
-              Contact & Store
-            </h3>
-            <ul className="mt-4 space-y-2.5 text-sm">
-              <li className="text-slate-400">
-                <span className="block text-white font-medium">Headquarters:</span>
-                Mumbai, Maharashtra, India
-              </li>
-              <li className="text-slate-400">
-                <span className="block text-white font-medium">Customer Support:</span>
-                support@shoppulse.com
-              </li>
-              <li className="text-slate-400">
-                <span className="block text-white font-medium">Operating Hours:</span>
-                Mon – Sat: 9:00 AM – 8:00 PM IST
-              </li>
-            </ul>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-[#282c3f] mb-4">
+              EXPERIENCE SHOPPULSE APP
+            </h4>
+            <p className="text-xs text-[#696b79] mb-3">
+              Fast, event-aware shopping anytime on your phone.
+            </p>
+            <div className="flex flex-col gap-2 max-w-[150px]">
+              <div className="rounded bg-black text-white px-3 py-1.5 text-center text-[10px] font-bold cursor-pointer">
+                Google Play
+              </div>
+              <div className="rounded bg-black text-white px-3 py-1.5 text-center text-[10px] font-bold cursor-pointer">
+                App Store
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <h5 className="text-xs font-bold uppercase tracking-wider text-[#282c3f] mb-2">
+                KEEP IN TOUCH
+              </h5>
+              <div className="flex items-center gap-3 text-sm text-[#696b79]">
+                <span className="cursor-pointer hover:text-[#ff3f6c]">Facebook</span>
+                <span>•</span>
+                <span className="cursor-pointer hover:text-[#ff3f6c]">Instagram</span>
+                <span>•</span>
+                <span className="cursor-pointer hover:text-[#ff3f6c]">Twitter</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Column 4: Guarantees (Myntra iconic badges) */}
+          <div className="space-y-6">
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                <ShieldCheck className="h-5 w-5" />
+              </div>
+              <div>
+                <strong className="text-xs font-bold text-[#282c3f] block">
+                  100% ORIGINAL guarantee
+                </strong>
+                <p className="text-xs text-[#696b79] mt-0.5">
+                  for all products at shoppulse.com
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-rose-50 text-[#ff3f6c]">
+                <RotateCcw className="h-5 w-5" />
+              </div>
+              <div>
+                <strong className="text-xs font-bold text-[#282c3f] block">
+                  Return within 14 days
+                </strong>
+                <p className="text-xs text-[#696b79] mt-0.5">
+                  of receiving your order with easy doorstep pickup
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Bottom Bar: Copyright & Payment Icons */}
-      <div className="border-t border-slate-900 bg-slate-950 py-6">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 sm:flex-row sm:px-6 lg:px-8 text-xs text-slate-500">
-          <div className="flex items-center gap-1">
-            <span>&copy; {new Date().getFullYear()} ShopPulse Inc. Crafted with</span>
-            <Heart className="h-3 w-3 fill-rose-500 text-rose-500 inline" />
-            <span>in India. All rights reserved.</span>
-          </div>
+        {/* Popular Searches List (Myntra Footer style) */}
+        <div className="py-6 border-b border-[#eaeaec] text-xs text-[#696b79]">
+          <h5 className="font-bold text-[#282c3f] mb-1.5 uppercase text-[11px]">
+            POPULAR SEARCHES
+          </h5>
+          <p className="leading-relaxed">
+            Cricket Bats | India Jerseys | T-Shirts | Shirts | Wireless Headphones | Smartwatches | Sports Shoes | Running Shoes | Dresses | Jackets | Backpacks | Hoodies | Bluetooth Speakers | Tracksuits | Gaming Keyboards | Sunglasses
+          </p>
+        </div>
 
-          {/* Secure Payment Badges */}
-          <div className="flex items-center gap-3 text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
-            <span className="rounded bg-slate-900 px-2 py-1 border border-slate-800">UPI</span>
-            <span className="rounded bg-slate-900 px-2 py-1 border border-slate-800">VISA</span>
-            <span className="rounded bg-slate-900 px-2 py-1 border border-slate-800">Mastercard</span>
-            <span className="rounded bg-slate-900 px-2 py-1 border border-slate-800">RuPay</span>
-            <span className="rounded bg-slate-900 px-2 py-1 border border-slate-800">NetBanking</span>
-          </div>
+        {/* Bottom Copyright Row */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#94969f] gap-3">
+          <span>In case of any concern, <strong>Contact Us</strong></span>
+          <span>&copy; 2026 www.shoppulse.com. All rights reserved.</span>
+          <span>A Flipkart &amp; Myntra Inspired Architecture</span>
         </div>
       </div>
     </footer>
