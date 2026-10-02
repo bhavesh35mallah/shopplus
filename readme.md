@@ -228,3 +228,33 @@ ShopPulse/
 ├── .gitignore
 ├── README.md
 └── package.json
+
+---
+
+## 🌿 Git Branching Strategy
+
+| Branch Name | Task / Scope | Includes |
+|---|---|---|
+| `main` | Production Ready | Stable releases only |
+| `develop` | Integration Branch | Merged features before release |
+| `feature/auth` | Authentication & Users | Login, Register, JWT, AuthContext, User Model |
+| `feature/products` | Products & Categories | Product catalog, Shop, Categories, Search, Filters |
+| `feature/cart-wishlist` | Cart & Wishlist | Cart drawer, Wishlist state, Local/DB sync |
+| `feature/orders-checkout` | Checkout & Orders | Checkout flow, Order summary, Payment, Order details |
+| `feature/events` | Event System | Event listings, Event Details, Event Product Mappings |
+| `feature/admin-dashboard` | Admin Panel | Dashboard stats, Manage products, categories, orders |
+| `feature/ai-recommendations` | AI & Analytics | Recommendation engine, Event matching jobs, Analytics |
+
+### 🛠️ Common Git Commands
+
+```bash
+# Switch to a feature branch to start working:
+git checkout feature/auth
+
+# Save and commit your work:
+git add .
+git commit -m "feat(auth): implement user registration and login"
+
+# Push branch to GitHub:
+git push -u origin feature/auth
+```
