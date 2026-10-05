@@ -251,6 +251,9 @@ async function seed() {
   console.log("Connecting to MongoDB...");
   await mongoose.connect(uri);
   const db = mongoose.connection.db;
+  if (!db) {
+    throw new Error("Database connection not established");
+  }
 
   console.log("Creating/updating categories...");
   const categoryMap = new Map<string, mongoose.Types.ObjectId>();

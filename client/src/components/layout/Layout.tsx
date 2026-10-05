@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import CartDrawer from "../cart/CartDrawer";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -8,9 +9,10 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="flex min-h-screen flex-col bg-slate-50 font-sans antialiased text-slate-800">
+    <div className="flex min-h-screen flex-col bg-slate-50/50 font-sans antialiased text-slate-800 selection:bg-rose-500 selection:text-white">
       <Header />
-      <div className="flex-1">{children}</div>
+      <CartDrawer />
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   );
