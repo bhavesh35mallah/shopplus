@@ -168,193 +168,36 @@ ShopPulse/
 │       ├── utils/               # Helpers, seed scripts
 │       └── validators/          # Zod schemas
 │
-├── package.json                 # Root workspace scripts
-└── readme.md
-```
+├── .gitignore
+├── README.md
+└── package.json
 
 ---
 
-## Getting Started
+## 🌿 Git Branching Strategy
 
-### Prerequisites
-
-- **Node.js** v18+
-- **MongoDB** (local or Atlas)
-- **Redis** (local or cloud)
-
-### Installation
-
-```bash
-# Clone the repository
-git clone <repo-url>
-cd ShopPulse
-
-# Install client dependencies
-cd client && npm install
-
-# Install server dependencies
-cd ../server && npm install
-```
-
-### Running in Development
-
-```bash
-# From the root directory:
-
-# Start the backend server (port 5000)
-npm run dev:server
-
-# Start the frontend dev server (port 5173)
-npm run dev:client
-```
-
-Or run each manually:
-
-```bash
-# Terminal 1 — Server
-cd server && npm run dev
-
-# Terminal 2 — Client
-cd client && npm run dev
-```
-
-### Seeding the Database
-
-```bash
-cd server && npm run seed
-```
-
----
-
-## Environment Variables
-
-Create a `.env` file in `/server` based on `.env.example`:
-
-```env
-PORT=5000
-NODE_ENV=development
-MONGO_URI=mongodb://127.0.0.1:27017/shoppulse
-CLIENT_URL=http://localhost:5173
-JWT_SECRET=your_jwt_secret_here
-```
-
-Additional variables you may need (Cloudinary, Redis, email):
-
-```env
-REDIS_URL=redis://localhost:6379
-CLOUDINARY_CLOUD_NAME=your_cloud_name
-CLOUDINARY_API_KEY=your_api_key
-CLOUDINARY_API_SECRET=your_api_secret
-EMAIL_HOST=smtp.example.com
-EMAIL_USER=your_email
-EMAIL_PASS=your_password
-```
-
----
-
-## API Routes
-
-| Method | Endpoint | Description |
+| Branch Name | Task / Scope | Includes |
 |---|---|---|
-| GET | `/api/health` | Health check |
-| POST | `/api/auth/register` | Register a new user |
-| POST | `/api/auth/login` | Login & receive JWT cookie |
-| POST | `/api/auth/logout` | Logout & clear cookie |
-| GET | `/api/auth/me` | Get current user |
-| GET | `/api/products` | List products |
-| GET | `/api/products/:slug` | Get product by slug |
-| GET | `/api/categories` | List categories |
-| GET | `/api/orders` | Get user orders |
-| POST | `/api/orders` | Create an order |
-| GET | `/api/users/:id` | Get user profile |
-| PUT | `/api/users/:id` | Update user profile |
+| `main` | Production Ready | Stable releases only |
+| `develop` | Integration Branch | Merged features before release |
+| `feature/auth` | Authentication & Users | Login, Register, JWT, AuthContext, User Model |
+| `feature/products` | Products & Categories | Product catalog, Shop, Categories, Search, Filters |
+| `feature/cart-wishlist` | Cart & Wishlist | Cart drawer, Wishlist state, Local/DB sync |
+| `feature/orders-checkout` | Checkout & Orders | Checkout flow, Order summary, Payment, Order details |
+| `feature/events` | Event System | Event listings, Event Details, Event Product Mappings |
+| `feature/admin-dashboard` | Admin Panel | Dashboard stats, Manage products, categories, orders |
+| `feature/ai-recommendations` | AI & Analytics | Recommendation engine, Event matching jobs, Analytics |
 
----
+### 🛠️ Common Git Commands
 
-## Pages & Routes
+```bash
+# Switch to a feature branch to start working:
+git checkout feature/auth
 
-### Core
-| Route | Page |
-|---|---|
-| `/` | Home |
-| `/shop` | Shop / Product Listing |
-| `/products/:slug` | Product Details |
-| `/cart` | Shopping Cart |
-| `/checkout` | Checkout |
-| `/order-success` | Order Confirmation |
+# Save and commit your work:
+git add .
+git commit -m "feat(auth): implement user registration and login"
 
-### Auth
-| Route | Page |
-|---|---|
-| `/login` | Login |
-| `/register` | Register |
-
-### Dashboards
-| Route | Page |
-|---|---|
-| `/profile` or `/dashboard` | User Dashboard |
-| `/admin` | Admin Dashboard |
-| `/vendor` | Vendor Dashboard |
-
-### Client Care
-| Route | Page |
-|---|---|
-| `/track-order` | Track Order |
-| `/return-policy` | Return Policy |
-| `/shipping` | Shipping Policy |
-| `/cricket-bat-guide` | Cricket Bat Care Guide |
-| `/warranty` | Warranty Registration |
-| `/contact` | Contact Support |
-
-### Company
-| Route | Page |
-|---|---|
-| `/about` | About Us |
-| `/brand-partners` | Brand Partners |
-| `/sustainability` | Sustainability |
-| `/sponsorships` | Sponsorships |
-| `/careers` | Careers |
-| `/store-locator` | Store Locator |
-
-### Legal
-| Route | Page |
-|---|---|
-| `/privacy-policy` | Privacy Policy |
-| `/terms-of-service` | Terms of Service |
-| `/security` | Security Policy |
-| `/sitemap` | Sitemap |
-
----
-
-## Scripts
-
-### Root
-| Command | Description |
-|---|---|
-| `npm run dev:server` | Start backend in watch mode |
-| `npm run dev:client` | Start frontend dev server |
-| `npm run build:client` | Build frontend for production |
-| `npm run build:server` | Compile server TypeScript |
-| `npm run start` | Start production server |
-
-### Client (`/client`)
-| Command | Description |
-|---|---|
-| `npm run dev` | Vite dev server |
-| `npm run build` | Production build |
-| `npm run lint` | Lint with oxlint |
-| `npm run preview` | Preview production build |
-
-### Server (`/server`)
-| Command | Description |
-|---|---|
-| `npm run dev` | tsx watch mode |
-| `npm run build` | Compile TypeScript |
-| `npm run start` | Run compiled server |
-| `npm run seed` | Seed products into MongoDB |
-
----
-
-## License
-
-ISC
+# Push branch to GitHub:
+git push -u origin feature/auth
+```
